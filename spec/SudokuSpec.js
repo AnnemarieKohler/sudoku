@@ -15,6 +15,6 @@ describe("Sudoku", function() {
     var sudoku = new Sudoku(grid);
 
     it("checks that a row contains only numbers from 1 to 9", function() {
-      expect(sudoku[0].isBetweenOneAndNine).toBe(true);
+      expect(sudoku.isBetweenOneAndNine(sudoku.grid[0])).toBe(true);
     });
 });
