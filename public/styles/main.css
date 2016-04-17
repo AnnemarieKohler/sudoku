@@ -1,3 +1,6 @@
+body {
+  font-family: Arial, sans-serif;
+}
 input {
   width: 35px;
   height: 35px;
@@ -5,7 +8,13 @@ input {
   text-align: center;
   font-size: 14pt;
   color: #777;
+}
 
+input[type="text"]:disabled {
+  background: #dddddd;
+  font-weight: bold;
+  color: black;
+  text-align: center;
 }
 
 colgroup, tbody {
@@ -18,10 +27,6 @@ colgroup, tbody {
   margin: 2px;
 }
 
-.bold {
-  font-weight: bold;
-  color: black;
-}
 
 button {
   color: white;
@@ -36,4 +41,9 @@ button {
 
 .reset {
   background-color: orange;
+}
+
+.img {
+  max-width: 400px;
+  border-radius: 30px;
 }

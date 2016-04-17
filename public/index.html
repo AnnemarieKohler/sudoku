@@ -8,18 +8,41 @@
   <body>
     <h1>Erst das Rätsel lösen...</h1>
 
-    <div id="container">
+    <div id="container" style="display:none" data-bind="visible:true">
       <div data-bind="foreach: grid">
         <div data-bind="foreach: $data">
-          <input type="text" data-bind="value: val, disable: disabled" class="grid" />
+          <input type="text" data-bind="value: val, disable: disabled" class="grid" maxlength="1"/>
         </div>
       </div>
-      <button type="button" data-bind="click: submit" class="submit">Submit</button>
+
+      <button type="button" data-bind="click: submit" class="submit">Gelöst? :)</button>
+
+      <div data-bind="visible: finished() === 'success'">
+        <h1>ALLES GUTE ZUM GEBURTSTAG!</h1>
+        <h2>Es gibt sogar Seifenblasen!</h2>
+        <img class="img" src="./images/seifenblasen.gif" alt="" />
+
+        <h3>Aber jetzt zu dem, was wir eigentlichen wollen - Geschenke :)</h3>
+        <img class="img" src="./images/gutschein.png" alt="" />
+
+      </div>
+
+      <div data-bind="visible: finished() === 'failure'">
+        Schade, das war nicht ganz richtig! Probiers doch noch ein Mal. Es lohnt sich wirklich :P
+      </div>
+
+    </div>
+
+    <div id="win">
+      <div data-bind="html: details"></div>
+    </div>
+    <div id="lose">
+      <div data-bind="text: youHaveLost"></div>
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
-    <script type="text/javascript" src="./src/Interface.js"></script>
     <script type="text/javascript" src="./src/Sudoku.js"></script>
+    <script type="text/javascript" src="./src/Interface.js"></script>
 
   </body>
 </html>

@@ -1,7 +1,6 @@
 /* eslint-env knockout.js */
-
 const inputGrid = function inputGrid() {
-  return [[undefined, 6, undefined, undefined, undefined, undefined, 1, undefined],
+  return [[undefined, 6, undefined, undefined, undefined, undefined, undefined, 1, undefined],
           [undefined, undefined, undefined, 6, 5, 1, undefined, undefined, undefined],
           [1, undefined, 7, undefined, undefined, undefined, 6, undefined, 2],
 
@@ -34,12 +33,28 @@ const viewModel = function viewModel(inputGrid) {
   }
   return {
     grid: grid,
+    finished: ko.observable(),
       submit: function(args) {
         console.log(args);
+        let submission = grid.map(function(row) {
+          return row.map(function (col) {
+            return col.val();
+          });
+        });
+        let puzzle = new Sudoku(submission);
+        if (puzzle.isSolutionCorrect()) {
+          console.log('yes');
+          this.finished("success");
+
+        } else {
+          console.log('nope');
+          this.finished("failure");
+        };
       },
   };
 };
 
 
-const thisvm = viewModel(inputGrid());
-ko.applyBindings(thisvm, document.getElementById('container'));
+const thisVM = viewModel(inputGrid());
+
+ko.applyBindings(thisVM, document.getElementById('container'));
