@@ -1,0 +1,43 @@
+input {
+  width: 35px;
+  height: 35px;
+  border: 0px;
+  text-align: center;
+  font-size: 14pt;
+  color: #777;
+
+}
+
+table {
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+colgroup, tbody {
+  border: solid medium;
+}
+
+td {
+  border: solid thin;
+  padding: 0;
+}
+
+.bold {
+  font-weight: bold;
+  color: black;
+}
+
+button {
+  color: white;
+  font-size: 14pt;
+  margin: 15px 0;
+  border: none;
+}
+
+.submit {
+  background-color: green;
+}
+
+.reset {
+  background-color: orange;
+}
