@@ -42,5 +42,7 @@ describe('Sudoku', function() {
     expect(sudoku.getColumns()).toEqual(columns);
   });
 
-  
+  it('checks each column follows the rules', function () {
+    expect(sudoku.isEachColumnFollowingRules()).toBe(true);
+  });
 });

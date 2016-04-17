@@ -28,11 +28,20 @@ Sudoku.prototype.isEachRowFollowingRules = function isEachRowFollowingRules() {
   return false;
 };
 
-Sudoku.prototype.getColumns = function _getColumns() {
-  var grid = this.grid;
+Sudoku.prototype.getCols = function getCols() {
+  const grid = this.grid;
   return grid.map(function(_,i) {
     return grid.map(function(row) {
       return row[i];
     });
   });
+};
+
+Sudoku.prototype.isEachColumnFollowingRules = function isEachColumnFollowingRules() {
+  for (let i = 0; i < 9; i++) {
+    if (this.isBetweenOneAndNine(this.getCols()[i]) && this.isEachNumberUnique(this.getCols()[i])) {
+      return true;
+    }
+  }
+  return false;
 };
