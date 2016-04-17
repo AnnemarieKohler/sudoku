@@ -39,7 +39,7 @@ describe('Sudoku', function() {
                      [3, 8, 6, 7, 2, 1, 4, 5, 9],
                      [1, 4, 5, 9, 8, 3, 2, 6, 7],
                      [9, 7, 2, 4, 5, 6, 8, 3, 1]];
-    expect(sudoku.getColumns()).toEqual(columns);
+    expect(sudoku.getCols()).toEqual(columns);
   });
 
   it('checks each column follows the rules', function () {
