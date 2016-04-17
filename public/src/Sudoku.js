@@ -45,3 +45,11 @@ Sudoku.prototype.isEachColumnFollowingRules = function isEachColumnFollowingRule
   }
   return false;
 };
+
+
+Sudoku.prototype.isSolutionCorrect = function isSolutionCorrect() {
+  if (this.isEachRowFollowingRules() && this.isEachColumnFollowingRules()) {
+    return true;
+  }
+  return false;
+};

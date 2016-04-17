@@ -1,3 +1,5 @@
+/* eslint-env es-lint */
+
 describe('Sudoku', function() {
 
   const grid = [[5, 6, 8, 4, 7, 2, 3, 1, 9],
@@ -11,6 +13,18 @@ describe('Sudoku', function() {
                 [9, 7, 6, 5, 1, 3, 4, 2, 8],
                 [8, 1, 2, 7, 9, 4, 5, 6, 3],
                 [3, 5, 4, 2, 6, 8, 9, 7, 1]];
+
+const columns = [[5, 2, 1, 6, 7, 4, 9, 8, 3],
+                 [6, 3, 4, 2, 9, 8, 7, 1, 5],
+                 [8, 9, 7, 1, 3, 5, 6, 2, 4],
+
+                 [4, 6, 8, 3, 1, 9, 5, 7, 2],
+                 [7, 5, 3, 8, 4, 2, 1, 9, 6],
+                 [2, 1, 9, 5, 6, 7, 3, 4, 8],
+
+                 [3, 8, 6, 7, 2, 1, 4, 5, 9],
+                 [1, 4, 5, 9, 8, 3, 2, 6, 7],
+                 [9, 7, 2, 4, 5, 6, 8, 3, 1]];
 
   const sudoku = new Sudoku(grid);
   const firstRow = sudoku.grid[0];
@@ -28,21 +42,14 @@ describe('Sudoku', function() {
   });
 
   it('gets the columns from the grid', function() {
-    const columns = [[5, 2, 1, 6, 7, 4, 9, 8, 3],
-                     [6, 3, 4, 2, 9, 8, 7, 1, 5],
-                     [8, 9, 7, 1, 3, 5, 6, 2, 4],
-
-                     [4, 6, 8, 3, 1, 9, 5, 7, 2],
-                     [7, 5, 3, 8, 4, 2, 1, 9, 6],
-                     [2, 1, 9, 5, 6, 7, 3, 4, 8],
-
-                     [3, 8, 6, 7, 2, 1, 4, 5, 9],
-                     [1, 4, 5, 9, 8, 3, 2, 6, 7],
-                     [9, 7, 2, 4, 5, 6, 8, 3, 1]];
     expect(sudoku.getCols()).toEqual(columns);
   });
 
   it('checks each column follows the rules', function () {
     expect(sudoku.isEachColumnFollowingRules()).toBe(true);
   });
+
+  it('checks solution is correct', function() {
+    expect(sudoku.isSolutionCorrect()).toBe(true);
+  })
 });
