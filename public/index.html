@@ -7,130 +7,19 @@
   </head>
   <body>
     <h1>Erst das Rätsel lösen...</h1>
-    <form class="form" action="index.html" method="post">
-      <table>
-        <caption>Sudoku of the day</caption>
-        <colgroup><col><col><col>
-        <colgroup><col><col><col>
-        <colgroup><col><col><col>
-        <tbody>
-          <tr>
-            <td><input type="text" maxlength="1">
-            <td><input type="text" maxlength="1" value="6" disabled class="bold">
-            <td><input type="text" maxlength="1">
 
-            <td><input type="text" maxlength="1">
-            <td><input type="text" maxlength="1">
-            <td><input type="text" maxlength="1">
+    <div id="container">
+      <div data-bind="foreach: grid">
+        <div data-bind="foreach: $data">
+          <input type="text" data-bind="value: val, disable: disabled" class="grid" />
+        </div>
+      </div>
+      <button type="button" data-bind="click: submit" class="submit">Submit</button>
+    </div>
 
-            <td><input type="text" maxlength="1">
-            <td><input type="text" maxlength="1" value="1" disabled class="bold">
-            <td><input type="text" maxlength="1">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script type="text/javascript" src="./src/Interface.js"></script>
+    <script type="text/javascript" src="./src/Sudoku.js"></script>
 
-
-          <tr>
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-
-           <td><input type="text" maxlength="1" value="6" disabled class="bold">
-           <td><input type="text" maxlength="1" value="5" disabled class="bold">
-           <td><input type="text" maxlength="1" value="1" disabled class="bold">
-
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-
-
-         <tr>
-          <td><input type="text" maxlength="1" value="1" disabled class="bold">
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1" value="7" disabled class="bold">
-
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1">
-
-          <td><input type="text" maxlength="1" value="6" disabled class="bold">
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1" value="2" disabled class="bold">
-        <tbody>
-          <tr>
-            <td><input type="text" maxlength="1" value="6" disabled class="bold">
-            <td><input type="text" maxlength="1" value="2" disabled class="bold">
-            <td><input type="text" maxlength="1">
-
-            <td><input type="text" maxlength="1" value="3" disabled class="bold">
-            <td><input type="text" maxlength="1">
-            <td><input type="text" maxlength="1" value="5" disabled class="bold">
-
-            <td><input type="text" maxlength="1">
-            <td><input type="text" maxlength="1" value="9" disabled class="bold">
-            <td><input type="text" maxlength="1" value="4" disabled class="bold">
-          <tr>
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1" value="3" disabled class="bold">
-
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-
-           <td><input type="text" maxlength="1" value="2" disabled class="bold">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-         <tr>
-          <td><input type="text" maxlength="1" value="4" disabled class="bold">
-          <td><input type="text" maxlength="1" value="8" disabled class="bold">
-          <td><input type="text" maxlength="1">
-
-          <td><input type="text" maxlength="1" value="9" disabled class="bold">
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1" value="7" disabled class="bold">
-
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1" value="3" disabled class="bold">
-          <td><input type="text" maxlength="1" value="6" disabled class="bold">
-        <tbody>
-          <tr>
-           <td><input type="text" maxlength="1" value="9" disabled class="bold">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1" value="6" disabled class="bold">
-
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-
-           <td><input type="text" maxlength="1" value="4" disabled class="bold">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1" value="8" disabled class="bold">
-          <tr>
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-
-           <td><input type="text" maxlength="1" value="7" disabled class="bold">
-           <td><input type="text" maxlength="1" value="9" disabled class="bold">
-           <td><input type="text" maxlength="1" value="4" disabled class="bold">
-
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-           <td><input type="text" maxlength="1">
-         <tr>
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1" value="5" disabled class="bold">
-          <td><input type="text" maxlength="1">
-
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1">
-
-          <td><input type="text" maxlength="1">
-          <td><input type="text" maxlength="1" value="7" disabled class="bold">
-          <td><input type="text" maxlength="1">
-      </table>
-      <button type="submit" name="button" class="submit">Fertig? :)</button>
-      <a href="index.html"><button type="button" name="button" class="reset">Neustarten</button></a>
-    </form>
   </body>
 </html>

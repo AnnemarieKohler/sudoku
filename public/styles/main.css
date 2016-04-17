@@ -8,18 +8,14 @@ input {
 
 }
 
-table {
-  border-collapse: collapse;
-  font-family: Arial, sans-serif;
-}
-
 colgroup, tbody {
   border: solid medium;
 }
 
-td {
+.grid {
   border: solid thin;
   padding: 0;
+  margin: 2px;
 }
 
 .bold {
