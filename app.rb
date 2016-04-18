@@ -2,8 +2,8 @@ require 'sinatra'
 
 class Sudoku < Sinatra::Base
 
-get '/' do
-  erb(:index)
-end
+  get '/' do
+    'Hello world'
+  end
 
 end
