@@ -1,5 +1,4 @@
-$:.unshift File.expand_path("../", __FILE__)
 require 'rubygems'
-require 'sinatra'
-require './web'
-run Sinatra::Application
+require File.join(File.dirname(__FILE__), 'app.rb')
+
+run Sudoku
