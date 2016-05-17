@@ -7,6 +7,6 @@ The player can solve one game and after it has been solved, they will be display
 A live demo can be found here: http://alles-gute-zum-geburtstag.herokuapp.com/
 
 ## Technologies
-HTML/CSS
-Knockout
-Sinatra for deploying it to Heroku
+* HTML/CSS
+* Knockout
+* Sinatra for deploying it to Heroku
